@@ -130,7 +130,7 @@ for i in range(0, len(splitTrafoRout)):
 ptoOpt = open(ptoFile, 'r', encoding='utf-8').read()
 for i in range(0, len(inputFiles)):
     print('morphing image: ' + str(i))
-    subprocess.call(['convert', inputFiles[i], '-compress', 'LZW', '-distort',
+    subprocess.call(['convert', inputFiles[i], '-compress', 'lossless', '-distort',
                      'Shepards', ctrlPts[i],
                      tmp + os.sep + 'm' + str(i) + '.tif'])
     ptoOpt = ptoOpt.replace(inputFiles[i], tmp + '/m' + str(i) + '.tif')
